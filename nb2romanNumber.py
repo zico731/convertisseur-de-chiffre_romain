@@ -3,6 +3,7 @@ romain=["M","CM","D","CD","C","XC","L","XL","X","IX","V","IV","I"]
 
 
 def conv_romain(chiffre):
+    #assert chiffre >0 and chiffre< 4000, "le nombre saisi doit être compris entre 1 et 3999"
     chiffre0=chiffre
     
     i=0
@@ -17,6 +18,10 @@ def conv_romain(chiffre):
 
 nb=1    
 while nb !=0:
-    nb=int(input("Entrez un nombre: "))
-    print(conv_romain(nb))
-    print() 
+    nb=int(input("Entrez un nombre (0 = Quitter): "))
+    if  0 < nb < 4000:
+        print(conv_romain(nb))
+    elif nb > 0:
+        print ("le nombre saisi doit être compris entre 1 et 3999 !")
+        
+    print("")
